@@ -1,0 +1,46 @@
+html {
+	height: 100%;
+	width: 100%;
+	overflow: auto;
+}
+body {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	overflow: auto;
+	background:linear-gradient(black,white);
+}
+.jumbotron {
+	padding: 10px;
+	margin:0 auto;
+}
+.strips {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	width:940px;
+	position: relative;
+	margin: 0 auto;
+}
+.button1 {
+	border-radius: 50px;
+	position: relative; 
+	border: 2px solid black;
+	text-align: center;
+	cursor: pointer;
+	color: black;
+	margin:0 auto;
+	width:25%;
+	margin-bottom: 10px
+}
+.button2 {
+	border-radius: 50px;
+	margin:0 auto;
+	position: relative;
+	border: 2px solid black;
+	text-align: center;
+	cursor: pointer;
+	color: black;
+	width:25%;
+}
+

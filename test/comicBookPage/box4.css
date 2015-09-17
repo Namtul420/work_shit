@@ -1,0 +1,42 @@
+#box4 {
+	position: relative;
+	border:2px solid black;
+	width:47%;
+	height: 400px;
+	
+	box-shadow:10px 10px 5px black;
+	margin: 10px 10px 10px 10px;
+	display: none;
+	cursor: pointer;
+}
+
+#office_scene4{
+	position: relative;
+	height: 50%;
+	width: 50%;
+}
+/*#{
+	opacity: 0;
+	position: absolute;
+	left:100px;
+	top:80px;
+}
+#{
+	opacity: 0;
+	position: absolute;
+	top:180px;
+
+}
+#{
+	opacity: 0;
+	position: absolute;
+	left:25%;
+	top:50%;
+
+}
+#{	
+	opacity: 0;
+	position: absolute;
+	left:80%;
+	top: 30%;
+}*/

@@ -1,0 +1,42 @@
+#box2 {
+	position: relative;
+	border:2px solid black;
+	display: none;
+	width:47%;
+	height: 400px;
+	box-shadow:10px 10px 5px black;
+	margin: 10px 10px 10px 10px;
+	cursor: pointer;
+}
+
+#office_scene2{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+}
+#Parallax{
+	background-color: #fff;
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+}
+#snakeEyeInvertedCross{
+
+	position: absolute;
+	top:0;
+	left:0;
+}
+#tombstoneBloodyNail{
+
+	position: absolute;
+	top:0;
+	left:0;
+}
+#pickleNoseJuice{
+
+	position: absolute;
+	top:0;
+	left:0;
+}
+
