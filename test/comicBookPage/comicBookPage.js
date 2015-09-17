@@ -63,7 +63,7 @@ function boxFactory(id,backgroundColor){
 		if(!obj.isAnimating){
 			obj.isShowing = true;
 			obj.isAnimating = true;
-			currentBox = obj;
+			currentBox = obj; 
 			TweenLite.fromTo(obj.element,1,{opacity:0,scale:0},{opacity:1,display:'block',scale:1,rotation:"360deg", onComplete:scaleScenes});
 ;
 		}
