@@ -1,11 +1,11 @@
 #box2 {
 	position: relative;
 	border:2px solid black;
-	display: none;
 	width:47%;
 	height: 400px;
 	box-shadow:10px 10px 5px black;
-	margin: 10px 10px 10px 10px;
+	margin: 10px 10px 10px 10px;	
+	display: none;
 	cursor: pointer;
 }
 
@@ -21,22 +21,30 @@
 	position: relative;
 	width: 100%;
 }
-#snakeEyeInvertedCross{
+#guardtalk{
+	opacity: 0;
+	height: 25%;
+	position: absolute;
+	top: 0;
+	left: 100px;
 
+}
+#Background{
+	height: 100%;
 	position: absolute;
 	top:0;
 	left:0;
 }
-#tombstoneBloodyNail{
-
+#DickPrisonerGuard{
+	height: 100%;
 	position: absolute;
 	top:0;
 	left:0;
 }
-#pickleNoseJuice{
-
+#dicktalk{
+	opacity: 0;
+	height: 25%;
 	position: absolute;
 	top:0;
-	left:0;
+	left:500px;
 }
-

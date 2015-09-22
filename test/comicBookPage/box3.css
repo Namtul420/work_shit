@@ -6,14 +6,13 @@
 	box-shadow:10px 10px 5px black;
 	margin: 10px 10px 10px 10px;
 	display: none;
-	
 	cursor: pointer;
 }
 
 #office_scene3{
-	position: relative;
-	height: 50%;
-	width: 50%;
+	position: absolute;
+	height: 100%;
+	width: 100%;
 /*}
 #{
 	opacity: 0;

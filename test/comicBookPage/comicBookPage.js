@@ -5,14 +5,14 @@ function init(){
 	enlargeButton2();
 	buttonColor1();
 	buttonColor2();
-	lightningArray();
-	
+
+
 	
 	
 	window.addEventListener('resize', resizer, false);
 
 
-	var page1 = pageFactory([boxFactory("box1","#000"), boxFactory("box2","#fff"), boxFactory("box3","#000"),boxFactory("box4","#000")]);
+	var page1 = pageFactory([boxFactory("box1","#000",lightningArray), boxFactory("box2","#fff",panscene), boxFactory("box3","#000",null),boxFactory("box4","#000",null)]);
 }
 
 
@@ -33,8 +33,7 @@ function pageFactory(boxes){
 		var last_i = -1;
 		for(var i = 0; i < obj.boxes.length; i++)
 			 if(obj.boxes[i].isShowing) last_i = i;
-				resizer();
-				paintSky();
+
 
 		return last_i;
 	}
@@ -45,7 +44,7 @@ function pageFactory(boxes){
 	return obj;
 }
 
-function boxFactory(id,backgroundColor){
+function boxFactory(id,backgroundColor,onshow){
 	var obj = {};
 	if($('#'+id).length) obj.element=$("#"+id);
 	else {
@@ -65,7 +64,7 @@ function boxFactory(id,backgroundColor){
 			obj.isAnimating = true;
 			currentBox = obj; 
 			TweenLite.fromTo(obj.element,1,{opacity:0,scale:0},{opacity:1,display:'block',scale:1,rotation:"360deg", onComplete:scaleScenes});
-;
+			if(onshow!=null) onshow();
 		}
 	}
 
@@ -226,11 +225,14 @@ function rain() {
 
   for (var i = 0; i < drops_length; i++) {
     var drop = drops[i];
+   
     drop.fall();
     drop.draw(sky);
+
   }
 
   window.requestAnimFrame(rain);
+
 }
 
 function drop() {
@@ -288,8 +290,13 @@ function drop() {
 }
 
 function lightningArray(){
+	setTimeout(function(){
+		resizer();
+		paintSky();
+		lightning();
+	},1500);
 	var randTime = Math.random()*5000;
-	lightning();
+
 	setTimeout(lightningArray,randTime);
 }
 
@@ -305,38 +312,48 @@ for(var i = 0; i < strikeNumber; i++){
 }});
 }
 }
-jQuery(document).ready(function($){
-        $('#Parallax').mousemove(
-                function(e){
-                /* Work out mouse position */
-                var offset = $(this).offset();
-                var xPos = e.pageX - offset.left;
-                var yPos = e.pageY - offset.top;
+function panscene(){
+var tl = new TimelineMax();
+tl.add = (TweenMax.to("#guardtalk",1,{opacity:1,delay:2}));
+tl.add = (TweenMax.to("#DickPrisonerGuard",10,{x:-800,delay:4},onComplete:function(){
+	var dicktalk = ("#dicktalk",1,{opacity:1,delay:2});
+}));
+tl.add = (TweenMax.to("#Background",10,{x:-990,delay:4}));
+tl.add = (TweenMax.to("#guardtalk",10, {x:-990,delay:4}));
+
+}
+// jQuery(document).ready(function($){
+//         $('#Parallax').mousemove(
+//                 function(e){
+//                 /* Work out mouse position */
+//                 var offset = $(this).offset();
+//                 var xPos = e.pageX - offset.left;
+//                 var yPos = e.pageY - offset.top;
  
-                /* Get per­cent­age positions */
-                var mouseXPercent = Math.round(xPos / $(this).width() * 100);
-                var mouseYPercent = Math.round(yPos / $(this).height() * 100);
+//                 /* Get percentage positions */
+//                 var mouseXPercent = Math.round(xPos / $(this).width() * 100);
+//                 var mouseYPercent = Math.round(yPos / $(this).height() * 100);
  
-                /* Pos­i­tion Each Layer */
-                $(this).children('img').each(
-                        function(){
-                                var diffX = $('#Parallax').width() - $(this).width();
-                                var diffY = $('#Parallax').height() - $(this).height();
+//                 /* Position Each Layer */
+//                 $(this).children('img').each(
+//                         function(){
+//                                 var diffX = $('#Parallax').width() - $(this).width();
+//                                 var diffY = $('#Parallax').height() - $(this).height();
        
-                                var myX = diffX * (mouseXPercent / 100);
-                                var myY = diffY * (mouseYPercent / 100);
-                                var cssObj = {
-                                        'left': myX + 'px',
-                                        'top': myY + 'px'
-                                }
-                                $(this).animate({left: myX, top: myY},{duration: 50, queue: false, easing: 'linear'});
+//                                 var myX = diffX * (mouseXPercent / 100);
+//                                 var myY = diffY * (mouseYPercent / 100);
+//                                 var cssObj = {
+//                                         'left': myX + 'px',
+//                                         'top': myY + 'px'
+//                                 }
+//                                 $(this).animate({left: myX, top: myY},{duration: 50, queue: false, easing: 'linear'});
  
-                        }
-                );
+//                         }
+//                 );
  
-                }
-        );
-});
+//                 }
+//         );
+// });
 
 
 
